@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8" />
+            <style>
+              .title {
+                font-size: 35px;
+                color: black;
+              }
+
+              .img {
+                width: 500px;
+                height: 450px;
+              }
+
+              .contStyle {
+                width: 600px;
+                height: 650px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 20px auto;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                border-radius: 10px;
+                align-items: center;
+                background-color: lightgray;
+              }
+
+              .info {
+                font-size: 24px;
+                color: gray;
+              }
+            </style>
+            <title>Document</title>
+          </head>
+          <body>
+            <script>
+              const data = [
+                {
+                  title: "Nissan Presage, 2000/2018",
+                  description: "136000km, 2500cc, Diesel",
+                  image: "./Car.webp",
+                  price: "3 сая ₮",
+                },
+
+                {
+                  title: "Toyota Harrier, 2011/2024",
+                  description: "135000km, 2500cc, Diesel",
+                  image:
+                    "https://cdn1.unegui.mn/media/cache1/7e/7d/7e7d9b205b0be0748c423ee19d9b8666.webp",
+                  price: "35 сая ₮",
+                },
+
+                {
+                  title: "BYD SongPlus, 2024/2025",
+                  description: "135000km, 2500cc, Diesel",
+                  image:
+                    "https://cdn1.unegui.mn/media/cache1/ae/87/ae872848768b0f630bed3db104dc2d32.webp",
+                  price: "105 сая ₮",
+                },
+              ];
+
+              function card(cardData) {
+                const container = document.createElement("div");
+                container.className = "contStyle";
+
+                const img = document.createElement("img");
+                img.src = cardData.image;
+                img.className = "img";
+
+                const h1 = document.createElement("h1");
+                h1.innerText = cardData.price;
+                h1.style.color = "red";
+                h1.className = "title";
+
+                const p = document.createElement("p");
+                p.innerText = cardData.title;
+                p.className = "info";
+
+                const div1 = document.createElement("div");
+                div1.innerText = cardData.description;
+                div1.className = "info";
+
+                container.appendChild(h1);
+                container.appendChild(p);
+                container.appendChild(img);
+                container.appendChild(div1);
+
+                document.body.appendChild(container);
+
+                // console.log(h1, p, div1, container);
+              }
+
+              data.map(card);
+            </script>
+          </body>
+        </html>
+      </head>
+    </html>
+  </head>
+</html>
