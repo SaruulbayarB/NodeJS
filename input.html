@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .information {
+        border-color: blue;
+        border-width: 4px;
+        border-radius: 4px;
+        width: 200px;
+        height: 30px;
+      }
+
+      .btnStyle {
+        width: 200px;
+        height: 30px;
+        font-size: 24px;
+      }
+
+      .delBtnStyle {
+        width: 200px;
+        height: 30px;
+      }
+
+      .cont {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+    </style>
+    <script>
+      //Data
+
+      const listData = [];
+      const ul = document.createElement("ul");
+
+      const printInput = (value) => {
+        listData.push(value);
+      };
+
+      // Display to render
+
+      const render = () => {
+        ul.innerHTML = "";
+        listData.map((element) => {
+          const li = document.createElement("li");
+          li.innerText = element;
+          ul.appendChild(li);
+        });
+      };
+
+      // Activate the Body
+
+      const body = document.querySelector("body");
+
+      // create container
+
+      const container = document.createElement("div");
+      container.className = "cont";
+
+      // Create Input
+
+      const input = document.createElement("input");
+      input.className = "information";
+
+      // Create Button
+
+      const button = document.createElement("button");
+      button.className = "btnStyle";
+      button.innerText = "Submit";
+
+      // Delete Button
+
+      const deleteButton = document.createElement("button");
+      deleteButton.className = "delBtnStyle";
+      deleteButton.innerText = "Delete";
+
+      //   Place items in the body
+
+      document.body.appendChild(input);
+      document.body.appendChild(button);
+      document.body.appendChild(deleteButton);
+      document.body.appendChild(ul);
+      document.body.appendChild(container);
+      container.appendChild(input);
+      container.appendChild(button);
+      container.appendChild(deleteButton);
+
+      // Function to execute saving actions
+
+      button.addEventListener("click", () => {
+        printInput(input.value);
+        render();
+      });
+
+      deleteButton.addEventListener("click", () => {
+        printInput(input.value);
+        render();
+      });
+    </script>
+  </body>
+</html>
