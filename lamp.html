@@ -12,31 +12,34 @@
         height: 400px;
       }
     </style>
-    <script>
-      // change photos to turn the light on and off
 
-      const body = document.querySelector("body");
+      <script>
+      const body = document.body;
 
-      // off image
-      const offImage = document.createElement("img");
-      offImage.src = "https://www.w3schools.com/js/pic_bulboff.gif";
-      offImage.className = "im";
+      // Create a single image element
+      const bulbImage = document.createElement("img");
+      bulbImage.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+      bulbImage.className = "im";
+      body.appendChild(bulbImage);
 
-      // on image
+      // Create button
+      const switchButton = document.createElement("button");
+      switchButton.innerText = "Switch";
+      body.appendChild(switchButton);
 
-      const onImage = document.createElement("img");
-      onImage.src = "https://www.w3schools.com/js/pic_bulbon.gif";
-      onImage.className = "im";
+      // Track current state
+      let currentPhoto = 1; // 1 = OFF, 2 = ON
 
-      //button
-
-      const SwitchButton = document.createElement("button");
-
-      body.appendChild(offImage);
-      body.appendChild(onImage);
-      body.appendChild(SwitchButton);
-
-      SwitchButton.addEventListener("click", () => {});
+      switchButton.addEventListener("click", () => {
+        if (currentPhoto === 1) {
+          bulbImage.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+          currentPhoto = 2;
+        } else {
+          bulbImage.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+          currentPhoto = 1;
+        }
+      });
     </script>
+    
   </body>
 </html>

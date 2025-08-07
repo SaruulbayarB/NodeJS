@@ -28,18 +28,26 @@
 
       const addTodo = (value) => {
         data.push(value);
-        console.log(data);
+  
       };
 
-      const createElement = () => {
+      const createElement = (value) => {
         const li = document.createElement("li");
         li.innerText = value;
         ul.appendChild(li);
-      };
+      }
+      const render = () => {
+        ul.innerHTML =""
+          data.map((value) => {
+            createElement(value)
+          })
+        }
+    
       addButton.addEventListener("click", () => {
         addTodo(input.value);
-        createElement(input.value);
+        render(); 
       });
+
     </script>
   </body>
 </html>
