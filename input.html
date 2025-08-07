@@ -6,102 +6,39 @@
     <title>Document</title>
   </head>
   <body>
-    <style>
-      .information {
-        border-color: blue;
-        border-width: 4px;
-        border-radius: 4px;
-        width: 200px;
-        height: 30px;
-      }
-
-      .btnStyle {
-        width: 200px;
-        height: 30px;
-        font-size: 24px;
-      }
-
-      .delBtnStyle {
-        width: 200px;
-        height: 30px;
-      }
-
-      .cont {
-        width: 500px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-      }
-    </style>
+    <style></style>
     <script>
-      //Data
-
-      const listData = [];
-      const ul = document.createElement("ul");
-
-      const printInput = (value) => {
-        listData.push(value);
-      };
-
-      // Display to render
-
-      const render = () => {
-        ul.innerHTML = "";
-        listData.map((element) => {
-          const li = document.createElement("li");
-          li.innerText = element;
-          ul.appendChild(li);
-        });
-      };
-
-      // Activate the Body
-
       const body = document.querySelector("body");
 
-      // create container
-
-      const container = document.createElement("div");
-      container.className = "cont";
-
-      // Create Input
-
+      // Declare variables
       const input = document.createElement("input");
-      input.className = "information";
+      const addButton = document.createElement("button");
+      addButton.innerText = "add";
 
-      // Create Button
+      const ul = document.createElement("ul");
 
-      const button = document.createElement("button");
-      button.className = "btnStyle";
-      button.innerText = "Submit";
+      // Then append them to the body
+      body.appendChild(input);
+      body.appendChild(addButton);
+      body.appendChild(ul);
 
-      // Delete Button
+      // function to push value from input panel to data array
 
-      const deleteButton = document.createElement("button");
-      deleteButton.className = "delBtnStyle";
-      deleteButton.innerText = "Delete";
+      let data = [];
 
-      //   Place items in the body
+      const addTodo = (value) => {
+        data.push(value);
+        console.log(data);
+      };
 
-      document.body.appendChild(input);
-      document.body.appendChild(button);
-      document.body.appendChild(deleteButton);
-      document.body.appendChild(ul);
-      document.body.appendChild(container);
-      container.appendChild(input);
-      container.appendChild(button);
-      container.appendChild(deleteButton);
-
-      // Function to execute saving actions
-
-      button.addEventListener("click", () => {
-        printInput(input.value);
-        render();
-      });
-
-      deleteButton.addEventListener("click", () => {
-        printInput(input.value);
-        render();
+      const createElement = () => {
+        const li = document.createElement("li");
+        li.innerText = value;
+        ul.appendChild(li);
+      };
+      addButton.addEventListener("click", () => {
+        addTodo(input.value);
+        createElement(input.value);
       });
     </script>
   </body>

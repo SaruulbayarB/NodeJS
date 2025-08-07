@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .im {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+    <script>
+      // change photos to turn the light on and off
+
+      const body = document.querySelector("body");
+
+      // off image
+      const offImage = document.createElement("img");
+      offImage.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+      offImage.className = "im";
+
+      // on image
+
+      const onImage = document.createElement("img");
+      onImage.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+      onImage.className = "im";
+
+      //button
+
+      const SwitchButton = document.createElement("button");
+
+      body.appendChild(offImage);
+      body.appendChild(onImage);
+      body.appendChild(SwitchButton);
+
+      SwitchButton.addEventListener("click", () => {});
+    </script>
+  </body>
+</html>
