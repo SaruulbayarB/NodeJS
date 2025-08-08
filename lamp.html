@@ -7,39 +7,88 @@
   </head>
   <body>
     <style>
-      .im {
-        width: 400px;
-        height: 400px;
+      body {
+        display: flex;
+        margin: 0;
+      }
+      .color1 {
+        /* height: 50%; */
+        height: 100vh;
+        background-color: red;
+        width: 100vh;
+      }
+
+      .color2 {
+        /* height: 50%; */
+        height: 100vh;
+        background-color: blue;
+        width: 100vh;
       }
     </style>
 
-      <script>
+    <script>
+      // const body = document.body;
+
+      // // Create a single image element
+      // const bulbImage = document.createElement("img");
+      // bulbImage.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+      // bulbImage.className = "im";
+      // body.appendChild(bulbImage);
+
+      // // Create button
+      // const switchButton = document.createElement("button");
+      // switchButton.innerText = "ON";
+      // body.appendChild(switchButton);
+
+      // // Track current state
+      // let currentPhoto = 1; // 1 = OFF, 2 = ON
+
+      // switchButton.addEventListener("click", () => {
+      //   if (currentPhoto === 1) {
+      //     bulbImage.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+      //     currentPhoto = 2;
+      //     switchButton.innerText = "ON";
+      //   } else {
+      //     bulbImage.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+      //     currentPhoto = 1;
+      //     switchButton.innerText = "OFF";
+      //   }
+      // });
+
       const body = document.body;
 
-      // Create a single image element
-      const bulbImage = document.createElement("img");
-      bulbImage.src = "https://www.w3schools.com/js/pic_bulboff.gif";
-      bulbImage.className = "im";
-      body.appendChild(bulbImage);
+      const shape1 = document.createElement("div");
+      shape1.className = "color1";
+      shape1.style.width = "50%";
 
-      // Create button
-      const switchButton = document.createElement("button");
-      switchButton.innerText = "Switch";
-      body.appendChild(switchButton);
+      const shape2 = document.createElement("div");
+      shape2.className = "color2";
+      shape2.style.width = "50%";
 
-      // Track current state
-      let currentPhoto = 1; // 1 = OFF, 2 = ON
+      body.appendChild(shape1);
+      body.appendChild(shape2);
 
-      switchButton.addEventListener("click", () => {
-        if (currentPhoto === 1) {
-          bulbImage.src = "https://www.w3schools.com/js/pic_bulbon.gif";
-          currentPhoto = 2;
-        } else {
-          bulbImage.src = "https://www.w3schools.com/js/pic_bulboff.gif";
-          currentPhoto = 1;
+      shape1.addEventListener("click", () => {
+        shape1.style.width = parseInt(shape1.style.width) + 1 + "%";
+
+        shape2.style.width = parseInt(shape2.style.width) - 1 + "%";
+      });
+
+      shape2.addEventListener("click", () => {
+        shape2.style.width = parseInt(shape2.style.width) + 1 + "%";
+
+        shape1.style.width = parseInt(shape1.style.width) - 1 + "%";
+      });
+
+      addEventListener("keyup", (event) => {
+        if (event.key === "g") {
+          shape1.style.width = parseInt(shape1.style.width) + 1 + "%";
+          shape2.style.width = parseInt(shape2.style.width) - 1 + "%";
+        } else if (event.key === "h") {
+          shape2.style.width = parseInt(shape2.style.width) + 1 + "%";
+          shape1.style.width = parseInt(shape1.style.width) - 1 + "%";
         }
       });
     </script>
-    
   </body>
 </html>
