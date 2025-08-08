@@ -26,28 +26,34 @@
 
       let data = [];
 
-      const addTodo = (value) => {
-        data.push(value);
-  
+      const addTodo = (keyboardValue) => {
+        data.push(keyboardValue);
       };
 
       const createElement = (value) => {
         const li = document.createElement("li");
         li.innerText = value;
+
+        const x = document.createElement("button");
+        x.innerText = "X";
+
         ul.appendChild(li);
-      }
+        ul.appendChild(x);
+      };
+
       const render = () => {
-        ul.innerHTML =""
-          data.map((value) => {
-            createElement(value)
-          })
-        }
-    
+        ul.innerHTML = "";
+        data.map((value) => {
+          createElement(value);
+        });
+      };
+
       addButton.addEventListener("click", () => {
         addTodo(input.value);
-        render(); 
+        render();
       });
 
+      x.addEventListener("click", () => {});
     </script>
   </body>
 </html>
