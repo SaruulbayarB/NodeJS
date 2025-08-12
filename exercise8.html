@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const body = document.querySelector("body");
+
+      const button3 = document.createElement("button");
+      button3.innerText = "ADD";
+
+      const input = document.createElement("input");
+
+      let ul = document.createElement("ul");
+
+      body.appendChild(button3);
+      body.appendChild(ul);
+      body.appendChild(input);
+
+      button3.addEventListener("click", () => {
+        const text = document.createElement("li");
+        text.innerText = input.value;
+        ul.appendChild(text);
+      });
+    </script>
+  </body>
+</html>

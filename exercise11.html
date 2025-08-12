@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise - 11</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Filter Example</title>
+
+<body>
+  <script>
+
+    const body = document.querySelector("body");
+
+
+    const text1 = document.createElement("p");
+    text1.innerText = "Apple";
+    text1.dataset.type = "fruit";
+
+    const text2 = document.createElement("p");
+    text2.innerText = "Carrot";
+    text2.dataset.type = "vegetable";
+
+   
+    const select = document.createElement("select");
+
+    const optionAll = document.createElement("option");
+    optionAll.value = "all";
+    optionAll.innerText = "All";
+
+    const optionFruits = document.createElement("option");
+    optionFruits.value = "fruit";
+    optionFruits.innerText = "Fruits";
+
+    const optionVegetables = document.createElement("option");
+    optionVegetables.value = "vegetable";
+    optionVegetables.innerText = "Vegetables";
+
+   
+    select.appendChild(optionAll);
+    select.appendChild(optionFruits);
+    select.appendChild(optionVegetables);
+
+ 
+    body.appendChild(select);
+    body.appendChild(text1);
+    body.appendChild(text2);
+
+
+    const items = [text1, text2];
+
+    select.addEventListener("change", () => {
+      const selected = select.value;
+
+      items.forEach(item => {
+        if (selected === "all" || item.dataset.type === selected) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

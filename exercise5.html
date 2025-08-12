@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const body = document.querySelector("body");
+
+      let myText = document.createElement("span");
+      myText.innerText = "You have pressed:";
+
+      const button = document.createElement("button");
+      button.innerText = "Click";
+      const ul = document.createElement("ul");
+
+      body.appendChild(myText);
+      body.appendChild(button);
+      body.appendChild(ul);
+
+      let counter = 0;
+
+      function createCounter() {
+        ul.innerHTML = "";
+        const li = document.createElement("li");
+        li.innerText = counter;
+        ul.appendChild(li);
+      }
+
+      button.addEventListener("click", () => {
+        counter++;
+        createCounter();
+        console.log(myText.innerText + ";" + counter + "times");
+      });
+    </script>
+  </body>
+</html>

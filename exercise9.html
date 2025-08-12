@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const body = document.querySelector("body");
+
+      const button = document.createElement("button");
+      button.innerText = "Sort Accending";
+
+      const input = document.createElement("input");
+
+      body.appendChild(button);
+
+      body.appendChild(input);
+
+      let data = [8, 3, 7, 1, 5];
+
+      button.addEventListener("click", () => {
+        const sorterdData = data.sort(function (a, b) {
+          return a - b;
+        });
+
+        console.log(sorterdData);
+      });
+    </script>
+  </body>
+</html>

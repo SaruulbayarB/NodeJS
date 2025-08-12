@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roration Project</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-image: url(images/background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .MercuryContainer {
+        position: absolute;
+        border-style: dashed;
+        border-radius: 50%;
+        border-color: white;
+        width: 400px;
+        height: 400px;
+      }
+
+      .mercury {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-image: url(images/mercury.jpeg);
+      }
+
+      .NeptuneContainer {
+        position: absolute;
+        border-style: dashed;
+        border-radius: 50%;
+        border-color: white;
+        width: 1000px;
+        height: 1000px;
+      }
+
+      .neptune {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-image: url(images/neptune.jpeg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      /* @keyframes rotate {
+        from {
+          transform: rotate(0);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      } */
+    </style>
+    <div class="container">
+      <div class="MercuryContainer">
+        <div class="mercury"></div>
+      </div>
+
+      <div class="NeptuneContainer">
+        <div class="neptune"></div>
+      </div>
+    </div>
+  </body>
+</html>

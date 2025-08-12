@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise - 11</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Filter Example</title>
+
+<body>
+  <script>
+  const body = document.querySelector("body");
+
+  const text1 = document.createElement("p");
+  text1.innerText = "One";
+
+  const text2 = document.createElement("p");
+  text2.innerText = "Two";
+
+  const text3 = document.createElement("p");
+  text3.innerText = "Three";
+
+  const text4 = document.createElement("p");
+  text4.innerText = "Four";
+
+  // Append all to the body
+  body.appendChild(text1);
+  body.appendChild(text2);
+  body.appendChild(text3);
+  body.appendChild(text4);
+
+  // data is consisted of all these texts in the array 
+  const data = [text1, text2, text3, text4];
+
+
+  data.forEach((element, index) => {
+    element.addEventListener("click", () => {
+    //   element.remove();       
+      data.splice(index, 1);  
+      console.log(data); 
+
+      
+
+    });
+  });
+</script>
+
+</body>
+
+</html>

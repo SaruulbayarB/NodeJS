@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    
+          const body = document.querySelector("body");
+
+          const button = document.createElement("button");
+          button.innerText = "Click";
+
+          body.appendChild(button);
+
+          let data = [1, 4, 16, 16, 66, 78, 1, 4, 67];
+
+          
+
+          button.addEventListener("click", () => {
+
+            function FindBigNumbers() {
+            const filteredData = data.filter((element) => {
+              return element > 5;
+            });
+
+            return filteredData;
+          }
+            console.log(FindBigNumbers());
+            
+          });
+</script>
+
+    </script>
+  </body>
+</html>
